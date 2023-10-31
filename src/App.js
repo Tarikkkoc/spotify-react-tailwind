@@ -1,11 +1,20 @@
 import "./App.css";
-import { Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Layout1 from "./components/navbar/Layout1";
 import Layout2 from "./components/navbar/Layout2";
 import { useState } from "react";
 import Home from "./components/main/Home";
+import Playlist from "./components/main/Playlist";
 
 function App() {
+  const navigate = useNavigate();
+  const [playlist, setPlaylist] = useState(null);
+
+  const onMouseClick = (img, title, singer) => {
+    let list = { img, title, singer };
+    setPlaylist(list);
+    navigate("/playlist");
+  };
   const library = [
     {
       title: "Electronic Party",
@@ -41,13 +50,24 @@ function App() {
 
   const [home, setHome] = useState(true);
   return (
-    <div className="h-screen bg-darkHorizon flex w-full">
+    <div className="bg-darkHorizon flex w-full min-h-screen">
       <div className="pt-3 h-full flex flex-col gap-2">
         <Layout1 />
         <Layout2 library={library} />
       </div>
       <div className="pt-3 w-full h-full px-3 pb-3">
-        {home && <Home library={library} />}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              home && <Home library={library} onMouseClick={onMouseClick} />
+            }
+          />
+          <Route
+            path="/playlist"
+            element={<Playlist playlist={playlist} library={library} />}
+          />
+        </Routes>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 
 const Layout2 = ({ library }) => {
   return (
-    <div className="bg-zinc-900 text-white w-96 h-full flex flex-col gap-3 p-3 ml-3 mb-3 rounded-xl">
+    <div className="bg-zinc-900 text-white w-96 min-h-screen flex flex-col gap-3 p-3 ml-3 mb-3 rounded-xl">
       <div className="flex gap-2 text-white">
         <img
           src="/img/library.svg"
