@@ -5,6 +5,8 @@ import Layout2 from "./components/navbar/Layout2";
 import { useState } from "react";
 import Home from "./components/main/Home";
 import Playlist from "./components/main/Playlist";
+import { motion, AnimatePresence } from "framer-motion";
+import "./App.css";
 
 function App() {
   const navigate = useNavigate();
@@ -60,12 +62,34 @@ function App() {
           <Route
             path="/"
             element={
-              home && <Home library={library} onMouseClick={onMouseClick} />
+              <AnimatePresence exitBeforeEnter={false}>
+                <motion.div
+                  key="home"
+                  initial={{ opacity: 0, x: "100%" }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: "-100%" }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Home library={library} onMouseClick={onMouseClick} />
+                </motion.div>
+              </AnimatePresence>
             }
           />
           <Route
             path="/playlist"
-            element={<Playlist playlist={playlist} library={library} />}
+            element={
+              <AnimatePresence exitBeforeEnter={false}>
+                <motion.div
+                  key="playlist"
+                  initial={{ opacity: 0, x: "100%" }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: "-100%" }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Playlist playlist={playlist} library={library} />
+                </motion.div>
+              </AnimatePresence>
+            }
           />
         </Routes>
       </div>

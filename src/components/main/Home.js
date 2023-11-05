@@ -27,14 +27,15 @@ const Home = ({ library, onMouseClick }) => {
   const getTime = () => {
     const currentHour = new Date().getHours();
 
-    if (currentHour >= 6 && currentHour < 12) {
-      return "Good Morning";
-    } else if (currentHour >= 12 && currentHour < 17) {
-      return "Good Afternoon";
-    } else if (currentHour >= 17 && currentHour < 21) {
-      return "Good Evening";
-    } else {
-      return "Good Night";
+    switch (true) {
+      case currentHour >= 6 && currentHour < 12:
+        return "Good Morning";
+      case currentHour >= 12 && currentHour < 17:
+        return "Good Afternoon";
+      case currentHour >= 17 && currentHour < 21:
+        return "Good Evening";
+      default:
+        return "Good Night";
     }
   };
 
