@@ -53,7 +53,7 @@ function App() {
   const [home, setHome] = useState(true);
   return (
     <div className="bg-darkHorizon flex w-full min-h-screen">
-      <div className="pt-3 h-full flex flex-col gap-2">
+      <div className="pt-3 h-full flex flex-col gap-2 tablet:hidden mobile:hidden">
         <Layout1 />
         <Layout2 library={library} />
       </div>

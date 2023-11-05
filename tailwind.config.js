@@ -2,6 +2,14 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
+    screens: {
+      mobile: { max: "767px" },
+      // => @media (max-width: 767px) { ... }
+      tablet: { max: "1350px", min: "768px" },
+      // => @media (max-width: 991px) { ... }
+      desktop: { max: "1500px", min: "1351px" },
+      // => @media (max-width: 1231px) { ... }
+    },
     extend: {
       backgroundColor: {
         contextColor: "#134e4a",

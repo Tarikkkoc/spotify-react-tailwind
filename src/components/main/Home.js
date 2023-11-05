@@ -47,7 +47,10 @@ const Home = ({ library, onMouseClick }) => {
       : { backgroundImage: "linear-gradient(#134e4a, #71717a4d)" };
 
   return (
-    <div style={bgColorStyle} className="flex flex-col text-white rounded-xl">
+    <div
+      style={bgColorStyle}
+      className="flex flex-col text-white rounded-xl w-full"
+    >
       <div className="flex flex-col gap-3">
         <div className="w-full h-10 flex justify-between px-3 pt-2 rounded-t-xl">
           <img src="/img/back.svg" className="w-6 h-6 bg-white" />
@@ -80,12 +83,12 @@ const Home = ({ library, onMouseClick }) => {
           ))}
         </div>
         <span className="text-xl font-semibold px-3">Made for you</span>
-        <div className="grid grid-cols-5 px-3 gap-3">
+        <div className="grid grid-cols-5 px-3 gap-6 place-items-center tablet:grid-cols-3 mobile:grid-cols-1 ">
           {library.map((item) => (
-            <div className="flex flex-col group bg-white w-48 p-3 text-black rounded-lg hover:bg-zinc-500/50 duration-500 bg-zinc-500/5">
+            <div className="flex flex-col group bg-white w-48 p-3 text-black rounded-lg hover:bg-zinc-500/50 duration-500 bg-zinc-500/5 mobile:w-full">
               <div className="w-full flex flex-col items-end">
                 <img
-                  className="object-cover w-44 h-44 rounded-lg"
+                  className="object-cover w-44 h-44 rounded-lg mobile:w-full mobile:object-cover"
                   src={item.img}
                   alt=""
                 />
