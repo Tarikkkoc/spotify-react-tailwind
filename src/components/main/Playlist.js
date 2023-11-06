@@ -1,16 +1,35 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Playlist = ({ playlist, library }) => {
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    navigate(-1);
+  };
+
+  const bgStyle = () => {
+    if (playlist) {
+      return playlist.img;
+    } else {
+      return null;
+    }
+  };
+
   return !playlist ? (
     <div>Loading...</div>
   ) : (
-    <div>
+    <div style={{}}>
       <div className="w-full bg-gray-900">
         <div className="w-full h-10 flex justify-between px-3 pt-2 rounded-t-xl">
-          <img src="/img/back.svg" className="w-6 h-6 bg-white" />
+          <img
+            onClick={goBack}
+            src="/img/back.svg"
+            className="w-6 h-6 bg-white"
+          />
           <img src="/img/github.svg" className="w-6 h-6 bg-white" />
         </div>
-        <div className="p-3 flex items-center">
+        <div className="p-3 flex items-center mobile:flex-col">
           <img
             className="w-60 h-60 object-cover shadow-xl"
             src={playlist.img}
@@ -48,7 +67,7 @@ const Playlist = ({ playlist, library }) => {
               <th className="font-normal px-4 py-2 whitespace-nowrap">#</th>
               <th className="font-normal px-4 py-2 whitespace-nowrap">Title</th>
               <th className="font-normal px-4 py-2 whitespace-nowrap">Album</th>
-              <th className="font-normal px-4 py-2 whitespace-nowrap">
+              <th className="font-normal px-4 py-2 whitespace-nowrap mobile:hidden">
                 <svg
                   viewBox="0 0 32 32"
                   class="inline-block h-5 w-5"
@@ -73,7 +92,7 @@ const Playlist = ({ playlist, library }) => {
                 <td>
                   <div className="flex gap-2 p-2">
                     <img
-                      className="w-12 h-12 rounded-lg object-cover"
+                      className="w-12 h-12 rounded-lg object-cover mobile:hidden"
                       src={item.img}
                       alt=""
                     />
@@ -84,7 +103,7 @@ const Playlist = ({ playlist, library }) => {
                   </div>
                 </td>
                 <td>{item.title}</td>
-                <td>{item.title}</td>
+                <td className="mobile:hidden">{item.title}</td>
               </tr>
             ))}
           </tbody>

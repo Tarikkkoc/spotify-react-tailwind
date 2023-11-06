@@ -57,7 +57,7 @@ const Home = ({ library, onMouseClick }) => {
           <img src="/img/github.svg" className="w-6 h-6 bg-white" />
         </div>
         <span className="px-3 text-xl font-semibold">{getTime()}</span>
-        <div className="grid grid-cols-3 gap-5 px-3">
+        <div className="grid grid-cols-3 gap-5 px-3 tablet:grid-cols-2 mobile:grid-cols-1">
           {library.map((item, index) => (
             <div
               onClick={() => onMouseClick(item.img, item.title, item.singer)}
@@ -65,9 +65,9 @@ const Home = ({ library, onMouseClick }) => {
               onMouseLeave={() => onMouseLeave(index)}
               className="flex justify-between bg-transparentGray transition duration-300 group hover:bg-softGray rounded-lg"
             >
-              <div className="h-20 w-20">
+              <div className="h-20 w-20 flex">
                 <img
-                  className="h-full w-full object-cover rounded-lg"
+                  className="h-full shrink w-full shrink-1 object-cover rounded-lg"
                   src={item.img}
                   alt=""
                 />
@@ -84,8 +84,13 @@ const Home = ({ library, onMouseClick }) => {
         </div>
         <span className="text-xl font-semibold px-3">Made for you</span>
         <div className="grid grid-cols-5 px-3 gap-6 place-items-center tablet:grid-cols-3 mobile:grid-cols-1 ">
-          {library.map((item) => (
-            <div className="flex flex-col group bg-white w-48 p-3 text-black rounded-lg hover:bg-zinc-500/50 duration-500 bg-zinc-500/5 mobile:w-full">
+          {library.map((item, index) => (
+            <div
+              onClick={() => onMouseClick(item.img, item.title, item.singer)}
+              onMouseEnter={() => onMouseEnter(index)}
+              onMouseLeave={() => onMouseLeave(index)}
+              className="flex flex-col group bg-white w-48 p-3 text-black rounded-lg hover:bg-zinc-500/50 duration-500 bg-zinc-500/5 mobile:w-full"
+            >
               <div className="w-full flex flex-col items-end">
                 <img
                   className="object-cover w-44 h-44 rounded-lg mobile:w-full mobile:object-cover"
