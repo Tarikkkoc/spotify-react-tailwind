@@ -2,7 +2,7 @@
 <p>
 This project includes various transition effects and animations. The project is based on a Spotify theme, and the aim is to create a visual project using various CSS features. The project is created using React and TailwindCSS.
 </p>
-<p>You can visit: <a href="https://tk-spotify.netlify.app/">Tk-Spotify</a></p>
+<p>You can visit: <a href="https://tk-spotify.netlify.app/" target="_blank">Tk-Spotify</a></p>
 <h2>Libs</h2>
 <ul>
   <li>React</li>
