@@ -1,4 +1,4 @@
-<h2>TK Spotify>
+<h2>TK Spotify</h2>
 <p>
 This project includes various transition effects and animations. The project is based on a Spotify theme, and the aim is to create a visual project using various CSS features. The project is created using React and TailwindCSS.
 </p>
