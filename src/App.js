@@ -57,7 +57,7 @@ function App() {
         <Layout1 />
         <Layout2 library={library} />
       </div>
-      <div className="pt-3 w-full h-full px-3 pb-3">
+      <div className="pt-3 w-full h-full px- pb-3">
         <Routes>
           <Route
             path="/"
