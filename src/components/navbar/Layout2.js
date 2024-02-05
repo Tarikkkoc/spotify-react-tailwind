@@ -1,6 +1,6 @@
 import React from "react";
 
-const Layout2 = ({ library }) => {
+const Layout2 = ({ library, onMouseClick }) => {
   return (
     <div className="bg-zinc-900 text-white w-96 min-h-screen flex flex-col gap-2 px-4 py-3 ml-2 rounded-xl">
       <div className="flex gap-2 px-2 hover:text-white text-zinc-400 cursor-pointer transition duration-300">
@@ -18,7 +18,10 @@ const Layout2 = ({ library }) => {
         <span>Your library</span>
       </div>
       {library.map((item) => (
-        <div className="flex gap-3 hover:bg-zinc-800 hover:rounded-lg p-2 shadow-lg cursor-pointer">
+        <div
+          className="flex gap-3 hover:bg-zinc-800 hover:rounded-lg p-2 shadow-lg cursor-pointer"
+          onClick={() => onMouseClick(item.img, item.title, item.singer)}
+        >
           <img className="w-12 h-12 rounded-lg object-cover" src={item.img} />
           <div className="flex flex-col">
             <span>{item.title}</span>

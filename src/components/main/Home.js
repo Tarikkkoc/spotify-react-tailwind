@@ -58,7 +58,7 @@ const Home = ({ library, onMouseClick }) => {
           <Link className="bg-zinc-900 rounded-full h-8 w-8 flex justify-center items-center hover:scale-110 transition duration-300">
             <svg
               viewBox="0 0 16 16"
-              class="h-4 w-4 -ml-0.5"
+              className="h-4 w-4 -ml-0.5"
               astro-icon="bi:chevron-left"
             >
               <path
