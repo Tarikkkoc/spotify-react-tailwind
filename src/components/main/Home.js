@@ -51,7 +51,7 @@ const Home = ({ library, onMouseClick }) => {
   return (
     <div
       style={bgColorStyle}
-      className="flex flex-col text-white rounded-xl w-full"
+      className="flex flex-col text-white rounded-xl w-full min-h-screen"
     >
       <div className="flex flex-col gap-3">
         <div className="w-full h-10 flex justify-between px-3 pt-2 rounded-t-xl">

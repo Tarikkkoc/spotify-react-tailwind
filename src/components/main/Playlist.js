@@ -19,17 +19,24 @@ const Playlist = ({ playlist, library }) => {
   return !playlist ? (
     <div>Loading...</div>
   ) : (
-    <div className="">
+    <div className="min-h-screen mr-2">
       <div
+        id="playlist-body"
         style={{
           backgroundImage: `url(${bgStyle()})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backdropFilter: "blur(16px)",
+          borderTopLeftRadius: "12px",
+          borderTopRightRadius: "12px",
         }}
       >
-        <div className="w-full h-10 flex justify-between px-3 pt-2 rounded-t-xl">
+        <div
+          id="playlist-header-topbar"
+          className="w-full h-10 flex justify-between px-3 pt-2"
+        >
           <div
+            id="playlist-header-topbar-goback"
             className="bg-zinc-900 rounded-full cursor-pointer h-8 w-8 flex justify-center items-center hover:scale-110 transition duration-300"
             onClick={goBack}
           >
@@ -58,7 +65,10 @@ const Playlist = ({ playlist, library }) => {
             </svg>
           </Link>
         </div>
-        <div className="p-3 flex items-center mobile:flex-col">
+        <div
+          id="playlist-header-bodybar"
+          className="p-3 flex items-center mobile:flex-col"
+        >
           <img
             className="w-60 h-60 object-cover shadow-xl"
             src={playlist.img}
@@ -71,7 +81,10 @@ const Playlist = ({ playlist, library }) => {
           </div>
         </div>
       </div>
-      <div className="flex gap-5 py-10 px-3 items-center bg-gray-600">
+      <div
+        id="playlist-body-headerbar"
+        className="flex gap-5 py-10 px-3 items-center bg-gray-600"
+      >
         <div
           id="play"
           className="rounded-full text-center hover:scale-110 p-2 h-14 w-14 bg-play transition duration-300"
@@ -109,7 +122,10 @@ const Playlist = ({ playlist, library }) => {
           </g>
         </svg>
       </div>
-      <div className="bg-gray-600 px-10">
+      <div
+        id="playlist-body-table"
+        className="bg-gray-600 px-10 h-screen rounded-b-xl"
+      >
         <table className="table-auto text-left min-w-full divide-y-2 divide-gray-500/30">
           <thead>
             <tr className="text-gray-300">
