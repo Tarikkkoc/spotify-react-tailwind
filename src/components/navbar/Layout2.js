@@ -2,7 +2,7 @@ import React from "react";
 
 const Layout2 = ({ library, onMouseClick }) => {
   return (
-    <div className="bg-zinc-900 text-white w-96 min-h-screen flex flex-col gap-2 px-4 py-3 ml-2 rounded-xl">
+    <div className="bg-zinc-900 text-white w-96 h-[80%] flex flex-col gap-2 px-4 py-3 ml-2 rounded-xl">
       <div className="flex gap-2 px-2 hover:text-white text-zinc-400 cursor-pointer transition duration-300">
         <svg
           viewBox="0 0 32 32"

@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import TextField from "@mui/material/TextField";
 
 const Layout1 = () => {
+  const [searchState, setSearchState] = useState(true);
+  const onClickSearchBtn = () => {
+    setSearchState(false);
+  };
   return (
-    <div className="bg-zinc-900 w-96 flex flex-col gap-5 px-5 py-3 mx-2 rounded-xl">
+    <div className="bg-zinc-900 w-96 flex flex-col justify-around gap-5 px-5 py-3 mx-2 rounded-xl h-[20%]">
       <div className="flex gap-3 hover:text-white text-zinc-400 cursor-pointer transition duration-300">
         <Link to="/" className="flex gap-3">
           <svg viewBox="0 0 32 32" class="h-6 w-6">
@@ -15,7 +20,10 @@ const Layout1 = () => {
           Home
         </Link>
       </div>
-      <div className="flex gap-3 hover:text-white text-zinc-400 cursor-pointer transition duration-300">
+      <div
+        onClick={() => onClickSearchBtn()}
+        className="flex gap-3 hover:text-white text-zinc-400 cursor-pointer transition duration-300"
+      >
         <svg viewBox="0 0 32 32" class="h-6 w-6" astro-icon="carbon:search">
           <path
             fill="currentColor"
@@ -24,6 +32,14 @@ const Layout1 = () => {
         </svg>
         Search
       </div>
+      {setSearchState && (
+        <TextField
+          id="outlined-basic"
+          variant="outlined"
+          fullWidth
+          label="Search"
+        />
+      )}
     </div>
   );
 };

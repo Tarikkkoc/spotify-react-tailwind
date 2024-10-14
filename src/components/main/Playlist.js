@@ -19,7 +19,14 @@ const Playlist = ({ playlist, library }) => {
   return !playlist ? (
     <div>Loading...</div>
   ) : (
-    <div className="min-h-screen mr-2">
+    <div
+      style={{
+        maxHeight: "97vh",
+        overflowY: "scroll",
+        scrollbarWidth: "none",
+        msOverflowStyle: "none",
+      }}
+    >
       <div
         id="playlist-body"
         style={{

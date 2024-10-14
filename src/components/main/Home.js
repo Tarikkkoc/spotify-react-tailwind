@@ -50,11 +50,18 @@ const Home = ({ library, onMouseClick }) => {
 
   return (
     <div
-      style={bgColorStyle}
-      className="flex flex-col text-white rounded-xl w-full min-h-screen"
+      // style={bgColorStyle}
+      style={{
+        ...bgColorStyle,
+        maxHeight: "97vh",
+        overflowY: "scroll",
+        scrollbarWidth: "none",
+        msOverflowStyle: "none",
+      }}
+      className="flex-1 text-white rounded-xl w-full mx-auto pb-4"
     >
       <div className="flex flex-col gap-3">
-        <div className="w-full h-10 flex justify-between px-3 pt-2 rounded-t-xl">
+        <div className="w-full h-8 flex justify-between px-3 pt-2 rounded-t-xl">
           <Link className="bg-zinc-900 rounded-full h-8 w-8 flex justify-center items-center hover:scale-110 transition duration-300">
             <svg
               viewBox="0 0 16 16"
@@ -90,7 +97,7 @@ const Home = ({ library, onMouseClick }) => {
               onMouseLeave={() => onMouseLeave(index)}
               className="flex justify-between bg-transparentGray transition duration-300 group hover:bg-softGray rounded-lg cursor-pointer"
             >
-              <div className="h-20 w-20 flex">
+              <div className="h-16 w-16 flex">
                 <img
                   className="h-full shrink w-full shrink-1 object-cover rounded-lg"
                   src={item.img}

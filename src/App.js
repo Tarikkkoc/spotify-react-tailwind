@@ -129,12 +129,17 @@ function App() {
 
   const [home, setHome] = useState(true);
   return (
-    <div className="bg-darkHorizon flex w-full">
-      <div className="pt-3 h-full flex flex-col gap-2 tablet:hidden mobile:hidden">
+    <div className="bg-darkHorizon h-screen flex w-full">
+      <div
+        style={{
+          maxHeight: "100vh",
+        }}
+        className="py-3 h-full flex flex-col justify-between gap-2 tablet:hidden mobile:hidden"
+      >
         <Layout1 />
         <Layout2 library={library} onMouseClick={onMouseClick} />
       </div>
-      <div className="pt-3 w-full h-full px- pb-3">
+      <div className="py-3 w-full h-full">
         <Routes>
           <Route
             path="/"
